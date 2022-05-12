@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>2.이미지,링크문자열.html</title>
+ </head>
+ <body>
+  <h3>이미지 불러오기</h3>
+  <!-- 
+  절대경로 => c:/webtest/1.client/1일차~드라이브표시
+  상대경로 => 현재 폴더를 기준해서 불러올 파일을 지정해서 불러오는 방식
+                 1. client(..)_상위 폴더
+				     1일차(.)_현재 폴더
+					     images->waiting
+ 1. src=>이미지를 불러온 경로를 지정
+ 2. width(가로),height(세로) => 이미지 크기(픽셀 수=> 모니터에 출력하는 점의 갯수) -> 확대, 축소 가능 & width,height 안적으면 원래 이미지 크기로 나옴.
+ 3. border = 테두리(선의 굵기)를 지정할 때 사용, 많이 사용됨, default = "0" = 테두리 x
+ 4. alt = 툴팁 문자열 표시, 브라우저에 따라 나올 수도 안나올 수도 있음. 현재 유명무실
+      그래서 ㄴ html5 => figure,figcaption(이미지 설명문)
+  -->
+  <figure>
+  <img src="images/waiting.jpg" 
+          width="362" height="474" border="0" alt="툴팁연습">
+  <figcaption>이미지에 대한 설명글(우체통)</figcaption>
+  </figure>
+  <hr><!-- 선을 그을 때 사용(선의 속성 html5에서는 사용X) -->
+  <figure>
+  <img src="images/fish.jpg" 
+          width="324" height="227" border="0">
+  <figcaption>이미지에 대한 설명글(망둥어)</figcaption>
+  </figure>
+<!-- 
+링크 href="이동하는 페이지명(html) or 사이트주소 
+     target="_blank" (새 창)(브라우저 열 때)
+	 #키워드(main) -> 특정한 페이지 갈 때
+	 href="mailto:실제 메일 주소를 연결"
+-->
+  <a href="http://www.naver.com">네이버</a><br>
+  <a href="http://www.daum.net" target="_blank">다음</a><br>
+  <a href="#main"> 문서 내부에서의 특정 위치로 이동할 때 사용</a>
+  <hr>
+  공부하시다가 문의가 있으시면 <a href="mailto:rhk415@gmail.com">
+   저한테 메일 좀 </a>
+</body>
+</html>

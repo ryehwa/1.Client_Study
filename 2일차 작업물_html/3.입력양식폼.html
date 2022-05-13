@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>3.입력양식폼.html</title>
+ </head>
+ <body>
+	<!-- 
+	입력 또는 수정 목적으로 만들어진 폼 
+	1. method="데이터를 전송할 때 전송 방식을 지정"(Get or Post) - default=Get
+					get=> 사이트 접속(기본)" -> 즉, 단순히 사이트 왔다갔다 하는 것! 사이트 바꿔서 이동하는 것!
+					post=> 데이터 입력(회원가입창, 로그인창, 게시판의 글쓰기 폼)-> url창에 X
+					action=>전송할 페이지명(~.jsp, ~.php, ~asp) (사람->배송지)
+					type="text"->문자열
+						  ="password"->암호 ("text"는 문자가 노출되므로)
+					name=> 입력받는 값을 내부적으로 구분하는 키워드(이름)(변수)-> javascript
+					size => 입력받는 문자열의 기본적인 길이를 의미 (ex:size="10" 10글자 여유있게 받는) 
+								->length
+								- 입력 안하고 폼 넘어갔을 때 입력하라는 메세지 나오는 게 size로 감지하고 나오는 것! -> size 10인데 입력 안하면 size="0"인 것을 감지하고 메세지창!
+
+	-->
+
+	<form method="post" action="register.jsp">
+		이름 : <input type="text" size="10" name="name"><br> <!-- size:입력 받을 수 있는 폭 맞추는 것! ex size="10"이면 10글자 여유있게 받는 사이즈! -->
+		암호 : <input type="password" size="10" name="pw"><br>
+		메일 : <input type="text" size="10" name="email"><br>
+		<p>
+
+	<!--radio = 성별(둘 중의 하나값만 선택) radio checked 속성을 이용해서 디폴트 설정
+			  대금 결제(현금), 계좌이체, 포인트,, (kor:라디오박스)
+	-->
+
+	<input type="radio" name="gender">남자
+	<input type="radio" name="gender" checked="checked">여자
+	<p>
+
+	<!-- checkbox = 다중선택(동시에 여러개를 선택) (kor:확인란)-->
+
+	취미 : <input type="checkbox" name="chk">바둑
+			<input type="checkbox" name="movie">영화감상
+			<input type="checkbox" name="baseball">야구
+	<p>
+
+	<!-- 
+		정해져있는 값 중에서 하나를 선택(select) 태그(kor:목록 상자=콤보박스)
+		ex) 부서명, 예매 날짜 입력,,, option 항목에 selected가 붙어 있는 것이 맨 처음에 나옴.
+	-->
+
+	취업희망 : <select name="job">
+					<option>웹프로그래밍</option> <!-- selected=checked -->
+					<option selected>빅데이터(파이썬)</option>
+					<option>DB전문가</option>
+					<option>보안전문가</option>
+				</select>
+				<p>
+
+	<!-- 여러 줄을 입력 받을 때 : textarea rows="행 수" cols="열 수" (kor:입력 영역)  -->
+	경력사항 : <p>
+	<textarea name="career" rows="8" cols="40"></textarea><p>
+
+	<input type="button" value="회원가입" onclick="alert('연습')"> <!--일반 버튼! value:겉에 드러난 버튼 이름, onclick:눌렀을 때 어떻게 할 건가, 전송X, 눌렀을 때 알림메세지 뜨는 것 -->
+	<input type="submit" value="회원가입"><!-- 자동으로 전송해주는 기능 -->
+	<input type="reset" value="다시 입력"><!-- 자동으로 처음부터 입력 받을 때 사용 -->
+
+	</form>
+ </body>
+</html>

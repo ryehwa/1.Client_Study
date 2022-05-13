@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>6.video,audio.html</title>
+ </head>
+ <body>
+
+<!-- 
+	video(영상),width,height=>동영상의 넓이와 높이를 지정 _ html에만 있는 태그
+						controls=>동영상 화면에 컨트롤 막대를 추가
+						src=>동영상 파일의 경로를 지정
+						type=>video/확장자
+						poster=>동영상이 화면에 나오지 않을 때 대신 표시할 그림을 지정하고 싶을 때 사용하는 속성
+-->
+	<video width"640" height="368" controls>
+		<source src="../../screen/spring.mp4" type="video/mp4">
+	</video>
+	<P>
+	<video src="../../screen/Thankyou.mp4" width="640" height="368" controls></video><p>
+
+	<video src="../../screen/Thankyou.mp4" width="640" height="368" controls poster="../../images/poster.jpg"></video><p>
+
+	<!-- 음악파일 -->
+	<img src="../../screen/landscape.jpg" width="500" height="380"></img>
+	<audio src="../../screen/old_melody.mp3" controls>
+	</audio>
+ </body>
+</html>

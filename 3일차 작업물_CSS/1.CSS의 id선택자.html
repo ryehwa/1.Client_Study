@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>1.CSS의 id선택자.html</title>
+  <style>
+  /*
+	id선택자 => 전체 문서에서 유일한 값을 부여해서 스타일을 적용시키는 방법
+				형식) 1. 태그명#id값(임의로 작성한 단어)=>선택자(like 주민등록번호)
+				태그명 생략해도 구분해서 스타일 적용이 가능하다.(하나의 태그에만 적용)
+					  2. 중의적으로 자바스크립트언어에서도 사용.(특정 태그를 가리키는 역할) 
+  */
+  div#x{font-family:impact;
+		   font-size:50pt;
+		   font-style:oblique;
+		   background-color:lime} /* 배경색 */
+  h1#y {color:blue;text-indent:100px;} /*text-indent=>들여쓰기*/
+  </style>
+ </head>
+ <body>
+	<h2>id값은 원칙적으로 유일한 값이기 때문에 중복 허용 X </h2>
+	<h1>h1태그</h1>
+	<h1 id="y">h1태그(id=y)적용</h1>
+
+	<div>div태그</div>
+	<div id="x">div태그(id=x)적용</div>
+ </body>
+</html>

@@ -3,8 +3,42 @@
  <head>
   <meta charset="UTF-8">
   <title>2.div,span태그의 차이점.html</title>
+  <!-- 
+		다른 태그보다 실무에서 스타일 적용 태그로 더 많이 사용하는 이유
+		-> 기본적인 기능 X (눈에 잘 안보임)
+
+		div 속성
+		1. 자동 줄바꿈이 일어나는 태그 (block태그)
+		2. 영역을 설정할 때 주로 사용 (width, height 주로 사용) - 메인페이지 작성 시 필수
+		3. 한 라인을 최대로 확대해서 사용 -> block 태그의 특성 중 하나
+
+		span 속성
+		1. 자동 줄바꿈이 일어나지 않는 태그(inline태그)
+		2. width,height 잘 사용 X - 영역 잡아줄 때 쓰는 태그는 아님, div의 보조적인 역할.
+		3. 글자가 있는 부분까지만 최소한으로 축소해서 사용 -> inline 태그의 특성
+		display => 화면에 보여주는 속성 -> block, inline,inline-block(두개의 특성)
+  -->
+  <style>
+		div{background:green;
+			  width:200px;
+			  height:50px;
+			  display:inline;
+		}
+		span{background:yellow;
+				width:200px;
+				height:50px;
+				display:block;
+				}
+  </style>
  </head>
  <body>
-  
+  <h1>DIV태그와 SPAN태그의 차이점</h1>
+  <div>div태그 연습입니다.</div>
+  <div>div태그 연습2입니다.</div>
+  <div>div태그 연습3입니다.</div>
+
+  <span>span태그 연습입니다.</span>
+  <span>span태그 연습2입니다.</span>
+  <span>span태그 연습3입니다.</span>
  </body>
 </html>

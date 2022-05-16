@@ -15,12 +15,26 @@
 		기본 단위 => px(글자를 기준) => 1em = 100% = 16px
   -->
   <style>
+		div#test{
+					font-size:20pt;
+					border:dotted 10px green; /*선의 종류, 굵기(크기),선의 색깔 */
 
+		}
+		div#test>p{ /* 부모태그 > 자식태그 (부모태그 밑에 자식태그가 존재한다면) */
+			font-size:2em; /*32px*/
+			text-decoration:underline;
+			color:red;
+		}
   </style>
 
 
  </head>
  <body>
-  
+	<div>단위연습</div>
+	<div id="test"><!-- 중첩(=계층적인 구조(Element(태그), Attribute(속성)) -->
+		<p>여기는 하위 p요소</p>
+		<p>여기는 하위 p요소2</p>
+	</div>
+		<p>여기는 하위 p요소2</p>
  </body>
 </html>

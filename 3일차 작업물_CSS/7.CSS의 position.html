@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>7.CSS의 position.html</title>
+  <!-- 
+		position:영역을 설정할 때 사용하는 속성 => width, height(크기),left,top(위치)
+
+		* default = static -> 작성 안하면 디폴트값인 스태틱으로 설정
+		1. default -> static => 작성한 순서대로(=순차적으로) 화면에 보이게 배치하는 영역 설정
+		2. absolute => 기준점(브라우저의 좌측 상단)
+								=>left, top(위치),width,height(크기)를 이용하는 배치 방법
+		3. relative => 상대적인 좌표배치방법 => 실행결과가 static과 비슷
+													=> left,top이 설정되지 않은 상태
+		4. fixed => 고정된 위치에서 움직이지 않는 속성, 위, 아래 스크롤해도 고정된 위치에 있는 경우
+  -->
+  <style>
+		.rel1{position:relative}
+		.rel2{position:relative;top:30px;left:40px}
+		/* relative : static이였다면 있었을 위치를 기준으로 left,top만큼 움직인 위치! */
+		.fix {
+				position:fixed;
+				bottom:0;right:0; /* 오른쪽 아래, 스크롤바 있는 쪽 하단에 고정*/
+				width:200px;
+				border:solid 3px #0066ff;     /*solid:실선*/
+				background-color:white;
+				font-size:12px;
+
+		}
+  </style>
+ </head>
+ <body>
+	<div style="background:red;width:60px;height:60px"></div>
+	<div style="position:static;background:blue;width:60px;height:60px"></div>
+	<div class="fix">fixed된 문자열 연습입니다.</div>
+	<div class="rel1"
+	style="background:cyan;width:60px;height:60px"></div>
+	<!-- ㄴ> left,top이 없기 때문에 다음에 바로 밑에 배치된 것, static과 우연히 겹친 것, 파란색 기준 -->
+	<div 
+	style="position:absolute;left:120px;top:30px;background:yellow;width:60px;height:60px"></div>
+	<div class="rel2"
+	style="background:green;width:60px;height:60px"></div>
+	<div class="rel1"
+	style="left:100px;top:50px;background:black;width:60px;height:60px">
+
+
+	
+	
+
+ </body>
+</html>

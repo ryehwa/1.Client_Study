@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>5.CSS속성(문단,문자열).html</title>
+  <!-- 
+		1.letter-spacing : 글자와 글자 사이의 간격. (자간)
+		2. word-spacing : 단어와 단어 사이의 간격.
+		3. line-height : 줄 간격, 행간.
+		4. text-indent : 들여쓰기
+			클래스명,id명은 가능한 속성명으로 사용하지 말 것.(추천X) 기존에 부여하지 않았던 이름으로!
+			밑의 예제는 한번만 하고 말 것이기 때문에 그냥 속성명으로 설정한 것, 실무에선 그러면 안좋음.
+  -->
+  <style>
+	/* 여기선 전부 p태그 뿐이니 . 앞에 p 써도 그만 안써도 그만 */
+	.normal {font-size:20pt}
+	.letter-spacing {letter-spacing:30px;font-size:20pt}
+	.word-spacing {word-spacing:30px;font-size:20pt} /* -> 띄어쓰기 기준 */
+	.line-height {line-height:50px;font-size:20pt}
+
+
+
+  </style>
+ </head>
+ <body>
+	<p class="normal">글자와 글자 사이의 간격을 조절하지 않는 경우(default)</p>
+	<p class="letter-spacing">글자와 글자 사이의 간격을 30px로 조절</p>
+	<p class="word-spacing">단어와 단어 사이의 간격을 30px로 지정</p>
+	<p class="line-height">줄 사이의 간격을 50pt로 지정</p>
+	<p class="normal">바로 밑의 글자들(default)</p>
+ </body>
+</html>

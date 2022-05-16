@@ -3,6 +3,41 @@
  <head>
   <meta charset="UTF-8">
   <title>4.semantic(4)활용.html</title>
+  <style>
+	body{
+		/*
+			1. background-color:#FFF 배경색을 지정
+			2. background-url:url(경로 포함해서 불러올 이미지의 파일명)
+			3. background-repeat:no repeat,repeat-x(x축 좌표(가로방향)에서만 출력)
+														 repeat-y(y좌표에서만 출력)
+														 fixed(이미지 고정 유무)
+			4. backgroud-position:이미지 위치(left,top,bottom,right)
+
+			하위 속성 미표기 시 1~4 순서로 기입! 디폴트는 배경색이 젤 먼저 나옴!
+
+		*/
+		background:#FFF url(../../images/bg3.jpg) repeat-x left bottom
+	}
+	p {
+		font-family:굴림;font-size:12px;
+	}
+	section{ display:block; /*줄바꿈*/
+				<!-- border-style:double -->
+	}
+	mark{
+		background-color:yellow;
+		font-size:12pt;
+		color:red;
+		font-family:impact;
+		font-weight:bolder;
+	}
+	figcaption{
+		display:block;
+		font:12px 글림;  /*font-size:12px;font-family:굴림;font-style:~ */
+		color:blue;
+		padding:10px 0 0 0;  /*padding-top:10px만 적용하라*/
+	}
+  </style>
  </head>
  <body>
   <!-- 

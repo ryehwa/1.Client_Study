@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>1.CSS3에서의 추가된 속성(1).html</title>
+  <style>
+
+  /* 핵심 : border-radius + box-shadow */
+
+		div{
+				border:solid 4px #aaaaaa;
+				/* border-radius : 둥근 모서리 (radius :  반지름)
+					box-shadow : 그림자 효과 */
+				padding:10px; /*테두리와 글자 사이의 거리, 테두리의 안쪽 여백*/
+				border-radius:50px; /*숫자가 커질수록 둥근 정도가 더 커짐*/
+				box-shadow:20px 20px 10px #666666;
+								 /* ㄴ>  오른쪽 크기, 아래 크기, 흐림 정도(번지는 효과 커짐) 색상 */
+
+		}
+  </style>
+ </head>
+ <body>
+ 	<div>
+		<h3>CSS3에서 스타일을 적용시킬 때 브라우저 별로 적용이 안되는 경우
+				접두어-> Chrome, Opera, Safari -> -webkit
+				(-webkit-animation-duration : 3s)
+					FireFox -> -moz
+					IE기준 -> -ms
+		</h3>
+		<pre><!-- 형식 유지(작성한 글자 형태 그대로 출력) -->
+			현재 글자                  띄어쓰                 기
+			줄바꿈
+			게시판의 글 내용 보기
+		
+		</pre>
+
+	</div>
+  
+  
+ </body>
+</html>

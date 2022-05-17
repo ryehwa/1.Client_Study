@@ -2,26 +2,28 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <title>6.연산자(산술,관계)(3).html</title>
+  <title>7.연산자(대입,논리)(4).html</title>
   <script>
   /*
-	연산자=>연산(=계산)을 하기 위한 기호
+	대입연산자(=배정) =>+=, -=, *=, /=, %= (축약표시)
+		자기 자신의 변수에 값을 더하거나 빼거나, 곱하거나, 나눌 때 축약해서 사용하는 연산자
+		ex) a=b+c
+			var a=2;
+			a=a+2 => a+=2 (연산자가 하나이기 때문에)
+			a=a-2 => a-=2
+			a=a*2 => a*=2
+			a=a/2 => a/=2;
+			쓰는 이유 : 컴퓨터 전산처리가 더 효율적으로 빠르기 때문에 사용. -> 연산자가 하나이기 때문에 빠름.
 
-	1. 산술연산자 -> +, -, *, /, % (나머지) => 3(계산이 되는 대상자)+5=8(이항)
-														 피연산자
-						단항연산자=>5,-5 (음수,양수)(부호),++,--(증감연산자)
-	2. 관계연산자(=비교연산자) -> >, >=, <, <= (수식 비교할 때 사용하는 연산자)
-					4>5== >false(거짓), 5>4(true) (참)
-					참인지 거짓인지를 알려주는 연산자,  5=5(x), 5==5(O)
-																	  5!=4(O)
-	
-	언제 변수를 사용해야 하는가?
-	1) 입출력 프로그램을 작성하는 경우 (변수 필요 갯수)
-	2) 계산할 때 -> 변수 필요
-	3) 현재 프로그램 상태를 기억시킬 필요가 있을 때 변수
-		var mouseclick=false;
-		if(마우스를 왼쪽 버튼을 눌렀다면)
-			그림을 그려라.
+	논리연산자 => 참과 거짓을 판별할 수 있는 연산자 (true or false)
+					   and(그리고)       or(또는)      Not(부정)
+					     =&&              =||          
+		 T     T           T                  T -----------> F
+		 T     F           F                  T
+		 F     T           F                  T
+		 F     F           F                  F  -----------> T
+
+
 
 
   */
@@ -29,38 +31,32 @@
  </head>
  <body>
 	<script>
-		document.write("산술,관계연산자<br>");
+		document.write("대입,논리연산자<br>");
 
-		//+
-		var res=20+30;
-		document.write("res=>"+res+"<br>");//50
+		var su1=(2>5) &&  (5<7); // F && T = F
+		document.write("su1="+su1+"<br>");
 
-		//-
-		var res=20-30;
-		document.write("res=>"+res+"<br>");//-10
+		var su2=(2>5) ||  (5<7); // F || T = T
+		document.write("su2="+su2+"<br>");
 
-		//*
-		var res=20*30;
-		document.write("res=>"+res+"<br>");//600
 
-		// /
-		var res=20/30;
-		document.write("res=>"+res+"<br>");
+		document.write("!(su2)="+(!su2)+"<br>"); // T -> F F
 
-		//관계연산자
-		/*
-		var a=10;
-		var b=5; */
-		//변수를 선언할 때 var 변수명=값, 변수명2=값,,,
-		var a=10, b=5; //위의 두 문장을 합친 것!-> 문장이 짧아졌으니 더 효율적.
-		var c=a>b;//10>5
-		alert(c); //계산 중간에 확인용으로 많이 사용
+		var result=20;
+		//result=result+20;
+		result+=20;
+		document.write("result=>"+result+"<br>"); //40
 
-		//주의할 점
-		c=(a==b);//c=(10==5)
-		c=(5+3)*7;
-		alert(c);
+		result-=20;
+		document.write("result=>"+result+"<br>"); //20
+		/* ㄴ> 컴퓨터는 순서대로 읽으므로 현재 result=40임! -> 40-20=20 */
 
+		result*=20;
+		document.write("result=>"+result+"<br>"); //20*20=400
+		/* ㄴ> 앞에서 result값 20으로 계산됨. 그러므로 현재 result=20로 계산. */
+
+		result/=20;
+		document.write("result=>"+result+"<br>"); //400/20=20
 	</script>
   
  </body>

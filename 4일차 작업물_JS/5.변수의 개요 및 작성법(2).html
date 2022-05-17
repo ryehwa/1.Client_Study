@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>5.변수의 개요 및 작성법(2).html</title>
+  <script>
+		//변수명을 작성할 때 문자+숫자+특수기호를 조합($와_만된다)
+		//자료형 => 컴퓨터에게 저장할 데이터 종류와 크기를 지정해주는 것.
+		//prompt("당신의 이름을 입력해주세요");
+		//var name="홍길동"; //name 변수에 홍길동 값이 저장
+		var name=prompt("당신의 이름을 입력해주세요");
+		
+		//var age=23; //"23" => 문자열 상수
+		var age=prompt("당신의 나이를 입력해주세요")
+		//age=24; //변수는 제일 마지막 값만 저장
+		var address=prompt("당신의 주소를 입력해주세요")
+		document.write("name변수에 저장된 값=>"+name+"입니다<br>"); 
+		//출력할 값 => 변수+문자열 결합
+		document.write("당신의 나이는"+age+"살이군요!<br>");
+		document.write("당신의 주소는"+address+"군요!<br>");
+  </script>
+
+ </head>
+ <body>
+ <ol>변수(variable)의 개요 및 특징
+	<li>입출력 프로그램(입력을 받아서 처리해주는 프로그램)</li>
+	<li>변수=>사용자로부터 값을 입력(문자,숫자,논리적인 값(참,거짓))을 입력을 받아서 저장(메모리에 저장)  RAM 공간</li>
+	<li>변수명을 사용할 때 대,소문자로 구분(name,Name,NAME) </li>
+			-> 주로 소문자 위주로 선언(지시)
+	<li>변수의 값은 중간에 값이 변경되면 변경된 값을 새로 저장</li>
+ </ol>
+  
+ </body>
+</html>

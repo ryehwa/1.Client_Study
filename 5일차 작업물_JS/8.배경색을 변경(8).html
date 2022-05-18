@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>8.배경색을 변경(8).html</title>
+  <style>
+		div#box{
+					width:200px;
+					height:200px;
+					background:#ffffff; /* white */
+					border:2px solid black;
+		}
+  </style>
+  <script>
+		function setRed(){
+			//배경색에 빨강 색을 부여할 태그 정보를 얻어옴(객체정보)=>id로 얻어올 수 있음 (id 선언했기 때문)
+			var box=document.getElementById("box");
+			//alert(box) style(상위 속성)="background(하위속성):red"
+			//태그 정보.상위속성명.하위속성명.변경할 값(저장할 값)
+			box.style.background="#ff0000"; //"red"
+		}
+		function setGreen(){
+			var box=document.getElementById("box");
+			box.style.background="#00ff00"; //"Green"
+	
+		}
+		function setBlue(){
+			var box=document.getElementById("box");
+			box.style.background="#0000ff";
+		
+		}
+  </script>
+ </head>
+ <body>
+	<input type="button" value="Red" onclick="setRed()">
+	<input type="button" value="Green" onclick="setGreen()">
+	<input type="button" value="Blue" onclick="setBlue()">
+	<p> <!-- id는 스타일도 쓰고 자바스크립트도 쓸 수 있음. -->
+	<!-- <div id="box" style="background:red"> -->
+	<div id="box">
+	<div id="box2">
+ 
+ </body>
+</html>

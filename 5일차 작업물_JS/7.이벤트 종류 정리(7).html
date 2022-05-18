@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>7.이벤트 종류 정리(7).html</title>
+ </head>
+  <!-- 
+		이벤트=>운영체제가 인식가능한 사용자들의 모든행동양식(키보드,마우스)
+
+		1.click 마우스 클릭(ex 버튼,링크문자열,,,) ->on+이벤트종류명=>onclick=연결시킬함수
+		2.load 제일먼저 문서(html)을 읽어들일때 발생=>onload="함수 or 자바스크립트코드"
+		3.unload ->현재사이트->다른 사이트로 이동=>onunload(IE 적용O,chrome 적용X)
+		4.change->콤보박스에서 특정한 항목을 선택->발생되는 이벤트 onchange
+		5.mouseover->마우스를 갖다대면 발생->onmouseover
+		6.mouseout->특정위치에서 마우스 포인터가 벗어날때 ->onmouseout
+		7.blur->입력하는 경우(input type="text") 커서가 이동할때 발생시키는 이벤트
+		onBlur="~" 커서를 다음 항목에 이동시키기 전에 전의 데이터를 제대로 입력했는지를
+		체크하고 싶을때 => required(html)
+		*** 태그를 구분할때->id,name속성을 두개 다 사용이 가능 **
+  -->
+
+ <body onload="alert('환영합니다')" onunload="alert('다음에 또')">
+	<a href="http://www.naver.com"
+		 onmouseover="document.img.src='../../images/kid2.gif'"
+		 onmouseout="document.img.src='../../images/kid.gif'">
+		<img src="../../images/kid.gif" name="img">
+	</a>
+		<img src="../../images/kid3.gif" name="img2">
+
+  
+ </body>
+</html>

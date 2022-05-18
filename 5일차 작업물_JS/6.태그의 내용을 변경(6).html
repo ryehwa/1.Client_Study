@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>6.태그의 내용을 변경(6).html</title>
+  <script>
+	function change(){
+		//alert("change호출연습");
+		//태그의 id속성 -> 1)스타일 적용(id선택자) 2)특정태그의 정보를 얻어오는 역할
+		//												    (=객체 정보)(DOM)
+		//DOM=> 화면구현에 관련된 영역 -> html을 읽어들여서 각각의 태그를 변수(=객체)로 인식해서 저장
+		//형식)document.getElementById("얻어올 태그의 id값")
+		var ch=document.getElementById("test2");
+		 alert(ch);//[object HTMLDivElement] <-null(태그정보를 가져오지 못한 상태)
+		 alert(ch.innerHTML);//태그정보.innerHTML(태그 가지고 있는 내용을 출력)
+		 //변경(=수정)=>태그정보.innerHTML=변경할 내용
+		 ch.innerHTML="화면상에 동적으로 변경되었습니다."
+	}
+	
+  </script>
+
+ </head>
+ <body>
+	<div id="test"> 자바스크립트의 변수,연산자,제어문(if),함수</div>
+	<div id="test2">DOM의 개요 및 활용</div>
+	<form>
+		<input type="button" value="변경" onclick="change()">
+	</form>
+  
+ </body>
+</html>

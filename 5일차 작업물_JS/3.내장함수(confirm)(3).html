@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>3.내장함수(confirm)(3).html</title>
+  <!-- 
+		형식)var 변수명=confirm("동의를 구하는 메세지"); //매개변수 O, 반환값 O
+  -->
+ </head>
+ <body>
+	<script>
+		var result=confirm("정말로 탈퇴하시겠습니까?")
+		//alert(result)
+		if(result)//if(result==true) if의 조건식의 값을 체크할 때 boolean이 참(생략) ; boolean:참거짓
+			alert("당신은 정상적으로 회원탈퇴\n 처리되었습니다.");
+		else //false
+			alert("회원 탈퇴가 취소되었습니다.");
+	</script>
+  
+ </body>
+</html>

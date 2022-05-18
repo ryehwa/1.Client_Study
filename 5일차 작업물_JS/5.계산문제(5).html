@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>5.계산문제(5).html</title>
+	<script>
+		function sum(){
+			//alert("sum()호출됨");
+			/*형식) window.document.폼이름(=form).입력양식항목.하위속성명(value)
+					-> . => 소유의 의미, window가 가지고 있는 document가 가지고 있는 폼이름이 가지고 있는 입력양식항목이 가지고 있는 하위속성명!
+			*/
+			var k=document.myForm.kor.value; //"90"
+			var e=document.myForm.eng.value; //"80"
+			var m=document.myForm.mat.value; //"70"
+			var total=k+e+m; //웹상에서 입력하는 모든 숫자는 기본적으로 문자열이다.
+			//"90"+"80"+"70"="908070" -> 문자+문자= 문자 이므로
+			alert("합계="+total)
+
+		}
+	</script>
+ </head>
+ <body>
+	<form name="myForm" method="post" action="cal.jsp">
+		국어:<input type="text" name="kor" placeholder="국어점수"><br>
+		영어:<input type="text" name="eng" placeholder="영어점수"><br>
+		수학:<input type="text" name="mat" placeholder="수학점수"><br>
+		<input type="button" value="점수출력" onclick="sum()">
+		<input type="reset" value="지우기">
+
+  
+ </body>
+</html>

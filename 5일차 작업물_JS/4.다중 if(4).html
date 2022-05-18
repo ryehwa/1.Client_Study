@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>4.다중 if(4).html</title>
+  <!-- 
+		조건식에 따라서 처리할 문장이 하나 이상인 경우 => 다중 if문 -> 너무 길면 실행 속도가 느려짐 => switch~case구문
+
+		if(조건식1){
+			수행1
+		}else if(조건식2){
+			수행2
+		}else if(조건식3){
+			수행3
+		}
+		..
+		else
+			수행n
+  -->
+ </head>
+ <body>
+	<script>
+		var qs=prompt("당신이 좋아하는 언어를 선택? 1.자바 2.자바스크립트 3.C언어");
+		if((qs=="자바") || (qs==1))
+			alert("당신은 자바를 좋아하는군요");
+		else if((qs=="자바스크립트") || (qs==2))
+			alert("당신은 자바스크립트를 선택했군요");
+		else //else if((qs=="C언어") || (qs==3)) -> 1,2 아니면 3나올 거니까 굳이 안써도 됨.
+			alert("C언어 선택하셨군요");
+	</script>
+  
+ </body>
+</html>

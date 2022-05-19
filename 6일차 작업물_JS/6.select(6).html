@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>6.select(6).html</title>
+ 
+  <!-- 핵심 : 콤보박스-> 대표적인 배열 문제, 리스트박스, 배열 -->
+  <!-- 아래의 인덱스 번호 가져온 것 : form.selectedIndex -->
+
+  <script>
+		function fg_color(form){//form=document.f_list.form:매개변수(?)
+			var list=form.selectedIndex; //:매개변수 받았을 때
+			//var list=document.f_list.form.selectedIndex : 매개변수 전달 안받았을 때
+			//alert(list)
+			/*
+			 document.fgColor(글자색(=전경색)) <-> bgcolor(배경색)=선택한 항목의 색깔
+			 document.f_list.form.options[내가 선택한 인덱스번호].text(겉의 이름) cf.내부적이름:value
+			 document.f_list.form.options[내가 선택한 인덱스번호].value(내부항목의 이름)
+
+			*/
+			//alert(document.f_list.form.options[f_list.form.selectedIndex].value)
+			//ㄴ>매개변수 안했을 때!, 너무 길어짐.
+			//value로 하면 내부 이름인 blue,green,orange,grey가 나오고
+			//text로 하면 겉의 이름인 파란색, 초록색, 오렌지색, 회색이 뜸.
+
+			//alert(document.f_list.form.options[list].value);
+
+									// form : document.f_list.form, 매개변수 준 것!
+			document.bgColor=form.options[list].value; 
+			//document.fgColor=form.options[list].value; //fgColor-C가 대문자!!
+		
+		}
+  </script>
+
+ </head>
+ <body>
+ <center>
+	<h3>글자색 변경하기</h3>
+	원하시는 색상을 선택하시면 글자의 색깔이 변경됩니다.
+	<!-- select태그 : 콤보박스도 되고 리스트박스도 됨! 
+		  콤보박스는 여러개 중에 하나만 보이는 것, 리스트박스는 다 보이는 것! -->
+	<!-- 
+		  list박스 만드는 방법
+			<select name="form"> -> form은 이 문서에서 임의로 작성한 것.
+			size="항목 수"(리스트박스 작성하는 방법)
+			한꺼번에 여러 개의 항목을 선택->multiple을 준다.(shift,ctrl)누르면서 다중 선택 가능. 선택 사항.
+			-> 리스트박스에서 size, multiple 지우면 콤보박스 됨!
+		  
+	-->
+							   <!-- onchange : 여러개 중 하나 선택했을 때 발생하는 이벤트 -->
+		<form name="f_list" onchange="fg_color(document.f_list.form)">			
+		<!-- 리스트박스 : <form name="" size=""> -->
+		<select name="form">
+			<option value="blue" >파란색</option>
+			<option value="green">초록색</option>
+			<option value="orange" selected>오렌지색</option>
+			<option value="grey">회색</option>
+		</select>
+		<!-- 똑같은 태그가 여러개 나오면 거의 배열임! 위에는 options배열 -->
+		</form>
+ </center>
+  
+ </body>
+</html>

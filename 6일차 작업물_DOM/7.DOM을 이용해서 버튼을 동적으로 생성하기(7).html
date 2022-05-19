@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>7.DOM을 이용해서 버튼을 동적으로 생성하기(7).html</title>
+  <script>
+	//함수 밖에 선언된 변수=>전역변수 -> (모든 함수에서 불러다 사용)(전체 프로그램) 전국적으로 쓸 수 있는 변수
+	var count=0;//div태그를 생성한 갯수->구분할 수 있는 번호 체크
+	function appendItem(){				//append:추가하다
+			count=count+1; //count+=1 ;1,2,3,4,5,,,,,
+		//1.div태그 생성-> <div></div>,,<h1></h1>,,,
+		//형식)document.createElement(생성할 태그명)
+		var newItem=document.createElement("div"); //<div></div>
+		//alert(newItem);											//div만들거면div,h1만들거면h1,span이면span
+
+		//2.<div id="item_"+생성한 번호> </div>
+		//2. 형식) 생성된 태그명.setAttribute(만들속성명,속성값)
+								//element:태그, attribute:속성
+		
+		newItem.setAttribute("id", "item_"+count);//<div id="item_"+1></div>
+																   //꼭 id가 아니여도 됨. id로 한다고 밑에서 해서 한것.
+
+		//3.텍스트노드    -넓은의미의태그:element,좁은의미의태그:노드
+		//			->1.createTextNode함수(간단) or innerHTML속성(긴문장)
+		var html='새로 추가된 아이템['+count+']'+'<input type="button" value="삭제"'+'onclick="removeItem('+count+')"/>'; //시작태그와 종료 태그 사이에 내용 없을 때 />로 끝낸다
+		//[' & '] 세트 '< & >' 세트
+
+		//4.결합=>생성된태그명.innerHTML='추가할내용';
+		newItem.innerHTML=html;//<div id="item_1">~<div>
+									//바로 위에서 설정한 변수!
+		
+		//5.부모태그의 정보 얻어오기
+		var itemListNode=document.getElementById("itemList");
+
+		//6.부모태그명.appendChild(추가시킬 자식태그명);
+		itemListNode.appendChild(newItem);
+	}
+  </script>
+ </head>
+ <body>
+  <!-- 
+  정적디자인=>html(뼈대),css(살),Javascript(기능)(있는 디자인한 그대로 출력)
+  동적디자인=>태그들을 메모리(RAM)에서 함수를 이용해서 작성->화면에 출력(DOM)
+  -->
+  <input type="button" value="추가" onclick="appendItem()">
+  <div id="itemList">
+	<!-- 자식태그를 만들어서 계속해서 추가
+	<div id="item_1">새로 추가된 아이템1[삭제버튼]</div>
+	<div id="item_2">새로 추가된 아이템2[삭제버튼]</div>-->
+ </body>
+</html>

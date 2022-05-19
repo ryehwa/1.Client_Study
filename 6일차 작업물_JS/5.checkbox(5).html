@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>4.Radio(4).html</title>
+  <script>
+
+		//checkbox => 중첩if문 - if문 안에 if문, 드래그,퍼가기 금지하기.
+
+	function test(){
+		
+			//1. 만약에 1.gif를 선택했다면
+				var sel=""; //선택한 그림을 저장할 변수(문자열 형태로)
+				//제어문 내부에 또 다른 제어문(=중첩 if문)
+				if((document.myform.a1.checked==false) && 
+				   (document.myform.a2.checked==false) && 
+				   (document.myform.a2.checked==false)){
+					   alert("최소한 한개의 그림은 선택하셔야 합니다");
+				
+				}//당신이 아무것도 선택하지 않았다면
+				else{//한개 선택한 경우(1)(2)(3),2개선택한경우(1,2)(2,3),,,3개 다 선택(1,2,3)
+					if(document.myform.a1.checked==true)  //id가 아닌 name이므로
+						sel+="1번"; //" "+"1번"=>1번
+					
+					if(document.myform.a2.checked) //true인 경우 생략 가능
+						sel+="2번"; //"1번 2번"
+					if(document.myform.a3.checked) 
+							sel+="3번";
+							alert(sel+"그림이 맘에 드시는군요!");
+					}
+			
+
+	}
+
+  </script>
+ </head>
+ <!-- 
+		화면 디자인한 이미지,글=>마우스 오른쪽 버튼 금지,드래그&드롭 금지
+		오른쪽 버튼 누를 때 뜨는 팝업 메뉴 : contextmenu
+		oncontextmenu="return false"=>마우스 오른쪽 금지
+		ondragstart="return false"=> 드래그 금지
+		onselectstart="return false"=>선택(블록지정) 금지
+ -->
+ <body oncontextmenu="return false"
+		   ondragstart="return false"
+		   onselectstart="return false">
+
+	<form name="myform">
+		맘에 드시는 그림을 선택하세요<p>
+
+<!-- 
+
+-->
+	
+		<!-- checkbox 다중선택 가능 cf)radio(하나만 선택 가능) -->
+		<input type="checkbox" name="a1">
+		1.<img src="../../images/1.gif"><p>
+		<!-- checked="checked"도 가능/true는 jQuery에서 많이! -->
+		<input type="checkbox" name="a2">
+		2.<img src="../../images/2.gif"><p>
+		<input type="checkbox" name="a3">
+		3.<img src="../../images/3.gif"><p>
+		<!-- 배열 아님! 각기 다 다르고 다중 선택 가능, 배열하려면 name 다 같게 맞춰야 함! -->
+
+		<input type="button" value="확인" onclick="test()">
+
+	</form>
+  
+ </body>
+</html>

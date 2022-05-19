@@ -4,14 +4,29 @@
   <meta charset="UTF-8">
   <title>4.Radio(4).html</title>
   <script>
+
+		//라디오 버튼에 배열에 if문
+
 	function test(){
-	
+		//다중if문 - 선택된 게 다 다르니까
+			//1. 만약에 1.gif를 선택했다면
+				if(document.myform.ok[0].checked==true)  //id가 아닌 name이므로
+					alert("1번 그림이 맘에 드시는군요!");
+				else if(document.myform.ok[1].checked==true) 
+					alert("2번 그림이 맘에 드시는군요!");
+				else if(document.myform.ok[2].checked==true) 
+					alert("3번 그림이 맘에 드시는군요!");	//0번,1번 하고 나면 당연히 2번 남으니까 굳이 안해도 됨.
+			 /*else
+					alert("3개의 그림 중 하나는 무조건 선택해야 합니다.")
+					ㄴ> 밑의 input타입 라디오에서 checked 안적었을 경우! 아무것도 선택 안하고 넘어갈 수 있으므로.*/
+
+
 	}
 
   </script>
  </head>
  <body>
-	<form name=""myform>
+	<form name="myform">
 		맘에 드시는 그림을 선택하세요<p>
 <!-- 
 		여러개의 항목이지만 하나밖에 선택할 수 없는 경우=배열 이용(같은 변수명의 배열을 사용)
@@ -26,7 +41,8 @@
 -->
 
 		<!-- 라디오버튼 : 동그란 버튼, 여러개 중에 하나만 선택할 때 쓰는 것! -->
-		<input type="radio" name="ok">1.<img src="../../images/1.gif"><p>
+		<input type="radio" name="ok"  checked="true">
+1.<img src="../../images/1.gif"><p><!-- checked="checked"도 가능/true는 jQuery에서 많이! -->
 		<input type="radio" name="ok">2.<img src="../../images/2.gif"><p>
 		<input type="radio" name="ok">3.<img src="../../images/3.gif"><p>
 		<!-- 변수명 ok로 일괄로, 어차피 하나만 골라서 저장하는 것이므로 하나의 변수명으로 가능, 그럼 1,2,3 어떻게 구분하느냐! 인덱스로! ok인덱스0, 인덱스1, 인덱스2 -->

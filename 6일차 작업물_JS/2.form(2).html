@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>2.form(2).html</title>
+  <script>
+	function test(){
+		//이름? -제어문에서 거의 if문 씀-> 모르겠을 땐 if문 쓰자.
+			if(document.myform.name.value=="") //이름칸에 아무것도 안썼다면!
+				{ alert("이름은 필수입력입니다.");
+				   document.myform.name.focus();//input박스에 ~focus() -> 커서를 넣어줘라!
+				   return false; //return; 밑의 함수가 계속 실행되는 것을 막아주는 안전 장치 역할.
+				   //통과 안되는 거! return true는 통과되는 것, 안적으면 이름,전번,암호 칸에 아무것도 안적었을 때 밑의 함수가 계속 실행돼서 커서 안나오고 바로 전번의 alert나고 전번의 focus 건너뛰고 또 암호의 alert가 나옴.->탈출문이라고 함.
+				   //즉, 안쓰면 if문 동시 실행됨.
+				   
+				}
+		
+		//전번?
+			if(document.myform.tel.value=="") //전번 칸에 아무것도 안썼다면!
+				{ alert("전번은 필수입력입니다.");
+				   document.myform.tel.focus();//전번칸에 커서 넣어줘라.
+				   return false;
+				}
+
+		//암호?
+			if(document.myform.pwd.value=="") //암호칸 칸에 아무것도 안썼다면!
+				{ alert("암호는 필수입력입니다.");			//alert 창 띄우고
+				   document.myform.pwd.focus();//암호 칸에 커서 넣어줘라.
+				   return false;
+				}
+
+		//다 정상적으로 입력했으니까 그제서야 전송하라. action="Register.jsp"
+		//형식) document.폼이름.submit()을 써야 함다.
+		//<input type="button"> or 링크문자열
+		document.myform.submit();
+	}
+	function test2(){//4자 이상 8자 이하만 입력을 허용 ->~.value.length(갯수) - (input박스 속 value)
+																//	~.value : document.form명.속성명.value
+				if(document.myform.pwd.value.length>=4 &&
+				   document.myform.pwd.value.length<8) //< : 미만, =< : 이하
+				{alert("정상적으로 암호를 입력했군요.");
+				   document.myform.pwd.focus();
+				}else{
+					alert("암호는 4자 이상 \n 8자 미만으로 입력 요망!");
+					document.myform.pwd.focus(); //내장함수
+						}
+				}
+
+	function test3(){
+		//document.myform.reset()//document.폼이름.reset() //내장 함수
+		document.myform.name.focus(); //이름부터 입력하기 때문에 이름란에 커서 들어감!
+	
+	}
+
+  </script>
+ </head>
+ <body onload="test3()" <!-- = "document.myform.name.focus()" 위의 함수 없으면 이걸로! -->>
+ <form name="myform" method="post" action="Register.jsp"
+		  onsubmit="return test()"><!-- onsubmit은 예외로 그냥 함수 이름만 쓰면 안됨.
+									다 입력한 경우 함수의 결과값(처리 결과)(return true)
+									형식) return 호출할 함수명()-->
+	이름<input type="text" name="name" size="10"><br>
+	전번<input type="text" name="tel" size="10"><br>
+	암호<input type="password" name="pwd" size="10"><br>
+
+	<!-- <input type="button" value="전송" onclick="test()"> -->
+	<input type="submit" value="전송"> <!-- 전송 가능 input 타입, 자동 전송 기능 有, but 입력하든 말든 무조건 전송함. input타입버튼은 위의 함수들 다 확인하고 버튼 발휘,input 타입 submit은 이벤트 따로 지정해야 함
+	! -> 위의 onsubmit 이벤트 설정 보셈-->
+	<input type="button" value="암호입력" onclick="test2()">
+	<input type="reset" value="다시입력" onclick="test3()"> <!-- 함수 굳이 더 안만들어도 되는데 설명																					   위해 만든 것 -->
+	<!-- input타입 button은 전송하라고 안하면 전송 안함. -> 전송하라고 꼭 써야 함! -->
+
+
+ </form>
+  
+ </body>
+</html>

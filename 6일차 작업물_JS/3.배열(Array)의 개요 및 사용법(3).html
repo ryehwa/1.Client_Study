@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>3.배열(Array)의 개요 및 사용법(3).html</title>
+  <script>
+/*
+	배열(Array)=> 같은 자료형의 변수들의 집합체(var name="홍길동", var age="23")
+						(문자열은 문자열끼리,숫자는 숫자끼리) => ex)팀장들의 모임
+				  => 연속적으로 잡혀져 있는 공간들(ex 아파트, 계란 한판), 배열 내의 각각의 것들='인덱스'라고 함
+(in 실무)성적처리=>과목 수, 총점, 평균, 등수(석차)
+						su=5,sum,avg,grade,,,,
+						단점: 변수의 갯수가 많아진다.메모리에 랜덤으로 저장=>불러오는 속도가 느림.
+						-> 배열 사용
+						-> 장점: 변수의 갯수는 한개로 통합(1개).메모리에 연속적으로 저장-속도 향상. (배열의 목적)
+			형식) 배열이름(변수의 대표적 이름)=new Array(값1,값2,,,)
+*/
+	a=new Array("배열","인덱스","길이","추가") //a:임의로 설정한 배열의 이름
+	//					 0		  1		   2	  3
+	document.write("배열의 길이=>"+a.length+"<br>"); //배열명.length(=속성명)
+	
+	a2=new Array("21c","자바스크립트응용");//배열명(a).concat(또 다른 배열명) //concat:합해라! like 합반
+	document.write("합친내용=>"+a.concat(a2)+"<br>");
+
+	a3=new Array(30,10,50,40,20); //10~50=> 오름차순(작->큰)
+												//50~10=> 내림차순(큰->작) SQL활용
+	document.write("sort(정렬)=>"+a3.sort()+"<br>"); //내장함수 sort가 알아서 정렬해줌. sort=정렬
+	document.write("reverse(역순)=>"+a.reverse()+"<br>"); //reverse가 거꾸로 정렬!, 뒤에서 앞으로
+																				 
+
+   //2번째 배열 방법
+
+	var a4=["포도","사과"]; //형식) 배열명=[요소1,요소2,,,];
+								//new Array 대신 쓰는 대괄호! -> 대괄호로 배열을 변수로 지정
+		      //0번째  1번째
+	document.write("a4[0]=>"+a4[0]+"<br>"); //0번째 값을 꺼내와라
+	document.write("a4[1]=>"+a4[1]+"<br>"); //1번째 값을 꺼내와라
+	
+	//배열명.push(저장할 값)
+	a4.push("배")
+	document.write("a4.length()=>"+a4.length+"<br>");
+	document.write("sort(정렬2)=>"+a4.sort()+"<br>");
+
+
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
